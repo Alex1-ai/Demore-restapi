@@ -38,6 +38,16 @@ app.use("/api/categories", categoryRoute)
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'reactbuild', 'build')))
 
+
+
+// Serve static files from the admin app
+app.use(express.static(path.join(__dirname, 'adminbuild', 'build')))
+
+// Serve React app for all other routes(fallback)
+app.get(`/${process.env.URL_STORE}`, (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'adminbuild', 'build', 'index.html'))
+  })
+
 // Serve React app for all other routes(fallback)
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'reactbuild', 'build', 'index.html'))
