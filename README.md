@@ -41,8 +41,8 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone [https://github.com/Alex1-ai/Demore-restapi]
-   cd demore-shop
+   git clone https://github.com/Alex1-ai/Demore-restapi
+   cd Demore-restapi
    ```
 
 2. **Install dependencies**:
@@ -51,9 +51,7 @@ To run this project locally, follow these steps:
    cd Demore-restapi
    npm install
 
-   # For the client
-   cd ../client
-   npm install
+  
    ```
 
 3. **Environment variables**:
