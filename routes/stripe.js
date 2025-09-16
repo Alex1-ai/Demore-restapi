@@ -1,7 +1,7 @@
 const dotenv = require("dotenv")
 
-//const stripe = require("stripe")(process.env.STRIPE_KEY)
-const stripe = require("stripe")("sk_test_51LflGiBfZd4ZWVbTN0NLcAQ0LkwibK4iU3ZJZAjGHqf0gHz7e3Kl3j2XfQCDKhgc6wvdvfIIDtFtgP6sXDmqmVtA00NkbHxGV2")
+const stripe = require("stripe")(process.env.STRIPE_KEY)
+// const stripe = require("stripe")("sk_test_51LflGiBfZd4ZWVbTN0NLcAQ0LkwibK4iU3ZJZAjGHqf0gHz7e3Kl3j2XfQCDKhgc6wvdvfIIDtFtgP6sXDmqmVtA00NkbHxGV2")
 const router =require("express").Router()
 
 
@@ -15,7 +15,8 @@ router.post("/payment", (req, res)=>{
 
             source:req.body.tokenId,
             amount: req.body.amount,
-            currency: "usd"
+            // currency: "usd"
+            currency: "ngn"
         },
         (stripeErr, stripeRes)=>{
             if(stripeErr){
